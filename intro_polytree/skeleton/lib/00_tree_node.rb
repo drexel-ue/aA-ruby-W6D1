@@ -20,4 +20,9 @@ class PolyTreeNode
         @children << child if !@children.include?(child)
     end
 
+    def remove_child(child)
+        child.parent = nil
+        raise 'NOT A CHILD' if !@children.include?(child)
+    end
+
 end
