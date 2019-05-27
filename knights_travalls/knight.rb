@@ -1,2 +1,2 @@
-class Knight
+class KnightPathFinder
 end
