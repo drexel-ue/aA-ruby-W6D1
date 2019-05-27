@@ -15,4 +15,9 @@ class PolyTreeNode
         node.children << self if node != nil && !node.children.include?(self)
     end
 
+    def add_child(child)
+        child.parent = self
+        @children << child if !@children.include?(child)
+    end
+
 end
