@@ -1,3 +1,5 @@
+require 'byebug'
+
 class PolyTreeNode
 
     attr_accessor :value, :children
@@ -23,6 +25,15 @@ class PolyTreeNode
     def remove_child(child)
         child.parent = nil
         raise 'NOT A CHILD' if !@children.include?(child)
+    end
+
+    def dfs(target_value)
+        return self if @value == target_value
+        @children.each do |child|
+            result = child.dfs(target_value) 
+            return result if result != nil
+        end
+        nil
     end
 
 end
