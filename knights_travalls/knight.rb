@@ -7,7 +7,8 @@ class KnightPathFinder
     end
 
     def self.valid_moves(position)
-        
+        x, y = position
+        [[x, y + 1], [x + 1, y + 1], [x + 1, y], [x + 1, y - 1], [x, y - 1], [x - 1, y -1], [x - 1, y], [x - 1, y + 1]]
     end
 
     def initialize(position)
